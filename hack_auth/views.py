@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from rest_framework import generics
 from .serializers import RegisterSerializer
+#from .serializers import EmailVerifySerializer
 from rest_framework.response import Response
 from rest_framework import status
 from rest_framework_simplejwt.tokens import RefreshToken
@@ -37,8 +38,9 @@ class RegisterView(generics.GenericAPIView):
         return Response(user_data, status=status.HTTP_201_CREATED)
 
 class VerifyEmailView(generics.GenericAPIView):
+    #serializer_class = EmailVerifySerializer
 
-    def verify_email(self, request):
+    def get(self, request):
         token = request.GET.get("token")
         try:
             payload = jwt.decode(token, settings.SECRET_KEY)
