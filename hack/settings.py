@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'hack_auth',
     'expenses',
     'djmoney',
+    'income',
 ]
 
 SWAGGER_SETTINGS = {
