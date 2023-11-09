@@ -4,6 +4,7 @@ from .serializers import RegisterSerializer, LoginSerializer
 #from .serializers import EmailVerifySerializer
 from rest_framework.response import Response
 from rest_framework import status
+from .renderers import UserRenderer
 #from rest_framework_simplejwt.tokens import RefreshToken
 #from .models import User
 #from .utils import Util
@@ -15,6 +16,7 @@ from rest_framework import status
 
 class RegisterView(generics.GenericAPIView):
     serializer_class = RegisterSerializer
+    renderer_classes = (UserRenderer,)
 
     def post(self, request):
         user = request.data
