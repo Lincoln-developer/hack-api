@@ -1,8 +1,8 @@
 from rest_framework import serializers
-from hack_auth.models import User
+from .models import Income
 
 class IncomeSerializer(serializers.ModelSerializer):
 
     class Meta:
-        model = User
-        fields = ['id','date','source', 'amount', 'description']
+        model = Income
+        fields = [ 'id', 'date', 'description', 'amount', 'source']

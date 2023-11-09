@@ -1,8 +1,8 @@
 from rest_framework import serializers
-from hack_auth.models import User
+from .models import Expense
 
 class ExpenseSerializer(serializers.ModelSerializer):
     
     class Meta:
-        model = User
-        fields = ['date', 'id', 'amount', 'description', 'category']
+        model = Expense
+        fields = ['id','date', 'description', 'amount', 'category']
