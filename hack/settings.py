@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'expenses',
     'djmoney',
     'income',
+    'userstatistics',
 ]
 
 SWAGGER_SETTINGS = {
